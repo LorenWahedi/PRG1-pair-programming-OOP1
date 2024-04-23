@@ -103,11 +103,41 @@ class Person {
     }
 }
 
+class Cohort {
+
+  _cohortCode;
+    
+    constructor(cohortCode){
+  
+      this._cohortCode = cohortCode;
+      this.cohort = [];
+  
+    }
+
+    add(student) {
+      this.cohort.push(student)
+      return this.cohort.length;
+    }
+    studentList() {
+      for (let i = 0; i < this.cohort.length; i++) {
+        console.log(this.cohort[i].name);
+      }
+    }
+    
+}
+  
+  
+  
 
   const aqil = new Person("Aqil Hussain", "01/01/2000", "Manchester");
   const steve = new AdaStaff("Steve Rich", "01/01/1998", "Lincoln", "Lecturer", "Manchester");
-  const loren = new AdaStudent("Loren Wahedi", "01/01/2000", "Liverpool", "Bank of America", "Data Analyst");  
-  
+  // const loren = new AdaStudent("Loren Wahedi", "01/01/2000", "Liverpool", "Bank of America", "Data Analyst");
+
+  const april24 = new Cohort("24-04-LDN-MCR");
+  april24.add(new AdaStudent("Loren Wahedi", "01/01/2000", "Liverpool", "Bank of America", "Data Analyst"));
+  april24.add(new AdaStudent("Woody", "20/4/2020", "Toy Story", "BoA", "Andys Toy"));
+
+  console.log(april24);
   
   
   // console.log(steve);
@@ -115,4 +145,4 @@ class Person {
   // console.log(steve.talk());
   // console.log(aqil.talk());
   // console.log(steve.name);
-  console.log(loren);
+  // console.log(loren.talk());
