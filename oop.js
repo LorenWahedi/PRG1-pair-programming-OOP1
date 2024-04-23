@@ -104,7 +104,6 @@ class Person {
 }
 
 
-  
   const aqil = new Person("Aqil Hussain", "01/01/2000", "Manchester");
   const steve = new AdaStaff("Steve Rich", "01/01/1998", "Lincoln", "Lecturer", "Manchester");
   const loren = new AdaStudent("Loren Wahedi", "01/01/2000", "Liverpool", "Bank of America", "Data Analyst");  
