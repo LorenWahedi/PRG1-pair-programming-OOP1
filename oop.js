@@ -123,21 +123,38 @@ class Cohort {
         console.log(this.cohort[i].name);
       }
     }
-    
+    removeStudent(studentName) {
+      for (let i = 0; i < this.cohort.length; i++) {
+        if (this.cohort[i].name === studentName) {
+          this.cohort.splice(i, 1);
+          return "Student removed from list";
+        } 
+      }
+      return "Student not found!";
+    }
+    searchForStudent(studentName) {
+      for (let i = 0; i < this.cohort.length; i++) {
+        if (this.cohort[i].name === studentName) {
+          return "This student is part of the April cohort";
+        }
+      }
+    }
 }
-  
-  
-  
 
+
+  
   const aqil = new Person("Aqil Hussain", "01/01/2000", "Manchester");
   const steve = new AdaStaff("Steve Rich", "01/01/1998", "Lincoln", "Lecturer", "Manchester");
   // const loren = new AdaStudent("Loren Wahedi", "01/01/2000", "Liverpool", "Bank of America", "Data Analyst");
 
   const april24 = new Cohort("24-04-LDN-MCR");
   april24.add(new AdaStudent("Loren Wahedi", "01/01/2000", "Liverpool", "Bank of America", "Data Analyst"));
-  april24.add(new AdaStudent("Woody", "20/4/2020", "Toy Story", "BoA", "Andys Toy"));
+  april24.add(new AdaStudent("Woody", "23/4/2020", "Toy Story", "Disney", "Andys Toy"));
 
-  console.log(april24);
+  // console.log(april24);
+  // console.log(april24.removeStudent("Loren Wahedi"));
+
+  console.log(april24.searchForStudent("Lore Wahedi"));
   
   
   // console.log(steve);
